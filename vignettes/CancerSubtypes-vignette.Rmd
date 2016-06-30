@@ -3,16 +3,13 @@ title: "An introduction of CancerSubtypes"
 author: "Taosheng Xu,Thuc Duy Le"
 date: '`r Sys.Date()`'
 output:
-  html_document:
-    number_sections: yes
-  pdf_document:
-    number_sections: yes
-vignette: "%\\VignetteIndexEntry{CancerSubtypes}\n%\\VignetteEncoding{UTF-8}\n%\\VignetteEngine{knitr::knitr}\n"
+  BiocStyle::html_document:
+   toc: true
+vignette: >
+  %\VignetteIndexEntry{CancerSubtypes}
+  %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
 ---
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 
 # Introduction
 With the accumulating wealth of data from large-scale cancer genome project (e.g. TCGA), identifying cancer molecular subtypes is becoming an important topic for cancer genomic data analysis. Distinguishing molecular subtypes for a given cancer greatly assist cancer therapy by moving away from a "one-size-fits-all" approach to medicine.
