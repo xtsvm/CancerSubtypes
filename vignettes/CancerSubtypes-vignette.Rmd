@@ -288,7 +288,7 @@ plot(sil1)  ##wrong result
 
 # Conclusions
 
-The Bioconductor CancerSubtypes R package provides a suite of cancer subtypes analysis tools and embeds the analysis in a standardized framework. This suite tools including data processing, clustering methods and result validation and visualization can meet most kinds of users (e.g. Biologists, Bioinformaticians and Computer scientist) for cancer subtype analysis from cancer genomic data analysis to a new cancer subtype identification method assessment. It provides a powerful way to analyze cancer subtype on genome-wide scale.
+The CancerSubtypes R package provides a suite of cancer subtypes analysis tools and embeds the analysis in a standardized framework. This suite tools including data processing, clustering methods and result validation and visualization can meet most kinds of users (e.g. Biologists, Bioinformaticians and Computer scientist) for cancer subtype analysis from cancer genomic data analysis to a new cancer subtype identification method assessment. It provides a powerful way to analyze cancer subtype on genome-wide scale.
 
 # References
 
