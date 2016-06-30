@@ -3,7 +3,7 @@ title: "An introduction of CancerSubtypes"
 author: "Taosheng Xu,Thuc Duy Le"
 date: '`r Sys.Date()`'
 output:
-  rmarkdown::html_vignette
+  html_document
 vignette: >
   %\VignetteIndexEntry{CancerSubtypes}
   %\VignetteEncoding{UTF-8}
