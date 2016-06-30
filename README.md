@@ -10,4 +10,7 @@ devtools::install_github("xtsvm/CancerSubtypes")
 ```
 
 ## CancerSubtypes usage
-Tutotial and examples can be found  [here](http://htmlpreview.github.io/?https://github.com/xtsvm/CancerSubtypes/blob/master/vignettes/CancerSubtypes-vignette.html)
+Tutotial and examples can be found  [here](https://github.com/xtsvm/CancerSubtypes/blob/master/vignettes/CancerSubtypes-vignette.Rmd)
+
+
+<!--(http://htmlpreview.github.io/?https://github.com/xtsvm/CancerSubtypes/blob/master/vignettes/CancerSubtypes-vignette.html)-->
