@@ -3,15 +3,15 @@ title: "An introduction of CancerSubtypes"
 author: "Taosheng Xu,Thuc Duy Le"
 date: '`r Sys.Date()`'
 output:
-  BiocStyle::html_document:
-   toc: true
+  rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{CancerSubtypes}
   %\VignetteEncoding{UTF-8}
   %\VignetteEngine{knitr::rmarkdown}
 ---
-
 # Introduction
+
+
 With the accumulating wealth of data from large-scale cancer genome project (e.g. TCGA), identifying cancer molecular subtypes is becoming an important topic for cancer genomic data analysis. Distinguishing molecular subtypes for a given cancer greatly assist cancer therapy by moving away from a "one-size-fits-all" approach to medicine.
 
 We devote to generate a customized package for cancer subtype analysis that includes the overall process from dataset processing to result validation with the unified data interface. In CancerSubtypes package, we integrated the typical methods in a framework including genomic data pre-processing, cancer subtypes identification, results validation, visualization and comparison. We implement these clustering methods in an unified input and output interface. So the process of cancer subtypes analysis can be easily conduct in a standard workflow. CancerSubtypes provides the most useful feature selection methods and subtypes validation method and helps users to focus on their cancer genomic data and the results from different methods can be compared and evaluation in visualization way easily.
