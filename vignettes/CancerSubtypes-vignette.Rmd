@@ -3,8 +3,10 @@ title: "An introduction of CancerSubtypes"
 author: "Taosheng Xu,Thuc Duy Le"
 date: '`r Sys.Date()`'
 output: html_document
-vignette: |
-  %\VignetteIndexEntry{CancerSubtypes} %\VignetteEncoding{UTF-8} %\VignetteEngine{knitr::rmarkdown}
+vignette: >
+  %\VignetteIndexEntry{CancerSubtypes} 
+  %\VignetteEncoding{UTF-8} 
+  %\VignetteEngine{knitr::rmarkdown}
 ---
 
 
