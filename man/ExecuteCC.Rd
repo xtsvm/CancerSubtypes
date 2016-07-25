@@ -79,15 +79,14 @@ If the data is a list containing the matched mutli-genomics  data matrices like 
 \examples{
 ### The input dataset is a single gene expression matrix.
 data(GeneExp)
-result=ExecuteCC(clusterNum=3,d=GeneExp,maxK=10,clusterAlg="hc",distance="pearson",title="GBM")
-result$group
+data(miRNAExp)
+result1=ExecuteCC(clusterNum=3,d=GeneExp,maxK=10,clusterAlg="hc",distance="pearson",title="GBM")
+result1$group
 
 ### The input dataset is multi-genomics data as a list
-#data(GeneExp)
-#data(miRNAExp)
-#GBM=list(GeneExp=GeneExp,miRNAExp=miRNAExp)
-#result=ExecuteCC(clusterNum=3,d=GBM,maxK=5,clusterAlg="hc",distance="pearson",title="GBM")
-#result$group
+GBM=list(GeneExp=GeneExp,miRNAExp=miRNAExp)
+result2=ExecuteCC(clusterNum=3,d=GBM,maxK=5,clusterAlg="hc",distance="pearson",title="GBM")
+result2$group
 
 }
 \references{

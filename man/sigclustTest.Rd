@@ -40,11 +40,8 @@ data(status)
 GBM=list(GeneExp=GeneExp,miRNAExp=miRNAExp)
 result=ExecuteSNF(GBM, clusterNum=3, K=20, alpha=0.5, t=20)
 group=result$group
-sigclust=sigclustTest(miRNAExp,group, nsim=500, nrep=1, icovest=3)
-
-#sigclust1=sigclustTest(GeneExp,group, nsim=1000, nrep=1, icovest=3)
-#sigclust2=sigclustTest(GeneExp,group, nsim=1000, nrep=1, icovest=1)
-#sigclust3=sigclustTest(miRNAExp,group, nsim=1000, nrep=1, icovest=1)
+sigclust1=sigclustTest(miRNAExp,group, nsim=500, nrep=1, icovest=3)
+sigclust2=sigclustTest(miRNAExp,group, nsim=1000, nrep=1, icovest=1)
 }
 \author{
 Xu,Taosheng \email{taosheng.x@gmail.com},Thuc Le \email{Thuc.Le@unisa.edu.au}

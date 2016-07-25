@@ -16,7 +16,7 @@ For the matrix, the rows represent the genomic features, and the columns represe
 NULL, the samples will be rearrangement according to the subtypes in the heatmap.}
 
 \item{silhouette}{An object of class silhouette. It is a result from function 
-silhouette() or silhouette2(). The default is NULL. If it is not NULL,  an annotation will be drawn to show the silhouette width for each sample.}
+silhouette() or silhouette_SimilarityMatrix(). The default is NULL. If it is not NULL,  an annotation will be drawn to show the silhouette width for each sample.}
 
 \item{scale}{A string for data normalization type before heatmap drawing.
 The optional values are shown below:
@@ -58,13 +58,10 @@ GBM=list(GeneExp=GeneExp,miRNAExp=miRNAExp)
 result=ExecuteSNF(GBM, clusterNum=3, K=20, alpha=0.5, t=20)
 group=result$group
 distanceMatrix=result$distanceMatrix
-silhouette=silhouette2(group, distanceMatrix)
+silhouette=silhouette_SimilarityMatrix(group, distanceMatrix)
 drawHeatmap(GeneExp,group,silhouette=silhouette,scale="max_min",Title="GBM Gene Expression")
-#drawHeatmap(GeneExp,Title="GBM Gene Expression")
-#drawHeatmap(GeneExp,group,scale="max_min",Title="GBM Gene Expression")
-#drawHeatmap(miRNAExp,group,silhouette=silhouette,scale="max_min",Title="GBM miRNA Expression")
-#drawHeatmap(GeneExp,group,silhouette=silhouette,scale="max_min",
-#            color="-RdYlBu",Title="GBM Gene Expression")
+drawHeatmap(GeneExp,group,silhouette=silhouette,scale="max_min",
+            color="-RdYlBu",Title="GBM Gene Expression")
 }
 \author{
 Xu,Taosheng \email{taosheng.x@gmail.com},Thuc Le \email{Thuc.Le@unisa.edu.au}
