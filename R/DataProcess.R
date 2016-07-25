@@ -20,7 +20,6 @@ data.checkDistribution<-function(Data)
   #which(is.na(MAD_features))
   feature_num=nrow(Data)
   par(mfrow=c(3,1))
-  
   ###1. check the expression distribution by average the absolut value of each feature.
   hist(mean_features, breaks=feature_num*0.1, col="red",
        main="Data (mean) distribution",
@@ -33,6 +32,8 @@ data.checkDistribution<-function(Data)
   hist(MAD_features, breaks=feature_num*0.1, col="red",
        main="Data (MAD) distribution",
        xlab="The Median Absolute Deviation of features")
+  
+  par(mfrow=c(1,1))
 }
 
 
@@ -102,15 +103,14 @@ data.normalization<-function(Data,type="feature_Median",log2=FALSE)
 #'@return
 #' The data matrix after imputation (without NAs).
 #'@examples
-#' Data=matrix(runif(1000),nrow = 50,ncol = 20)
-#' geneName=paste("Gene", 1:50, sep = " ")
-#' sampleName=paste("Sample", 1:20, sep = " ")
-#' rownames(Data)=geneName
-#' colnames(Data)=sampleName
-#' index=sample(c(1:1000),60)
-#' Data[index]=NA
-#' result=data.imputation(Data,fun="median")
-#' 
+#'Data=matrix(runif(1000),nrow = 50,ncol = 20)
+#'geneName=paste("Gene", 1:50, sep = " ")
+#'sampleName=paste("Sample", 1:20, sep = " ")
+#'rownames(Data)=geneName
+#'colnames(Data)=sampleName
+#'index=sample(c(1:1000),60)
+#'Data[index]=NA
+#'result=data.imputation(Data,fun="median")
 #'@export
 #'
 data.imputation<-function(Data,fun="median")

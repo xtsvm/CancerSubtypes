@@ -3,8 +3,12 @@
 #'
 #'Silhouette refers to a method of interpretation and validation of consistency within clusters of data. 
 #'The technique provides a succinct graphical representation of how well each object lies within its cluster (From Wiki).\cr
-#'Note that: the function "Silhouette()" in R package "cluster" is based on dissimilarity matrix. We rewrite this function to solve the 
-#'computation based on the similarity matrix. The result of our function is compatible to the function "Silhouette()" in R package "cluster".
+#'Note that: This function is a rewriting version of the function "silhouette()" in R package cluster.
+#'   The original function "silhouette()" is to compute the silhouette information based on a dissimilarity matrix.
+#'   Here the silhouette_SimilarityMatrix() is to solve the computation based on the similarity matrix.
+#'   The result of the silhouette_SimilarityMatrix() is compatible to the function "Silhouette()".
+
+
 #'
 #'@param group A vector represent the cluster label for a set of samples.
 #'@param similarity_matrix A similarity matrix between samples
@@ -21,10 +25,9 @@
 #' data(miRNAExp)
 #' GBM=list(GeneExp=GeneExp,miRNAExp=miRNAExp)
 #' result=ExecuteSNF(GBM, clusterNum=3, K=20, alpha=0.5, t=20)
-#' sil=silhouette2(result$group, result$distanceMatrix)
+#' sil=silhouette_SimilarityMatrix(result$group, result$distanceMatrix)
 #' plot(sil)
-#' ###If use the silhouette() in R package "cluter", the result 
-#' ###is meaningless because this is a similarity matrix.
+#' ###If use the silhouette(), the result is wrong because the input is a similarity matrix.
 #' sil1=silhouette(result$group, result$distanceMatrix)
 #' plot(sil1)  ##wrong result
 #' 
@@ -36,7 +39,7 @@
 #' Rousseeuw, P.J. (1987) Silhouettes: A graphical aid to the interpretation and validation of cluster analysis. J. Comput. Appl. Math., 20, 53-65.
 #'@export
 #'
-silhouette2<-function(group, similarity_matrix)
+silhouette_SimilarityMatrix<-function(group, similarity_matrix)
 {
   similarity_matrix=as.matrix(similarity_matrix)
   similarity_matrix<-(similarity_matrix+t(similarity_matrix))/2
@@ -157,7 +160,7 @@ survAnalysis<-function(mainTitle="Survival Analysis",time,status,group,distanceM
     #####
     if(class(distanceMatrix)=="Similarity")
     {
-      si=silhouette2(group,distanceMatrix)
+      si=silhouette_SimilarityMatrix(group,distanceMatrix)
     }
     else
     {
@@ -195,7 +198,7 @@ survAnalysis<-function(mainTitle="Survival Analysis",time,status,group,distanceM
 #' @param group A vector representing the subtype on each sample.  The default is NULL. If it is not
 #' NULL, the samples will be rearrangement according to the subtypes in the heatmap.
 #' @param silhouette An object of class silhouette. It is a result from function 
-#' silhouette() or silhouette2(). The default is NULL. If it is not NULL,  an annotation will be drawn to show the silhouette width for each sample.
+#' silhouette() or silhouette_SimilarityMatrix(). The default is NULL. If it is not NULL,  an annotation will be drawn to show the silhouette width for each sample.
 #' @param scale A string for data normalization type before heatmap drawing.
 #' The optional values are shown below:
 #' \itemize{
@@ -230,13 +233,10 @@ survAnalysis<-function(mainTitle="Survival Analysis",time,status,group,distanceM
 #' result=ExecuteSNF(GBM, clusterNum=3, K=20, alpha=0.5, t=20)
 #' group=result$group
 #' distanceMatrix=result$distanceMatrix
-#' silhouette=silhouette2(group, distanceMatrix)
+#' silhouette=silhouette_SimilarityMatrix(group, distanceMatrix)
 #' drawHeatmap(GeneExp,group,silhouette=silhouette,scale="max_min",Title="GBM Gene Expression")
-#' #drawHeatmap(GeneExp,Title="GBM Gene Expression")
-#' #drawHeatmap(GeneExp,group,scale="max_min",Title="GBM Gene Expression")
-#' #drawHeatmap(miRNAExp,group,silhouette=silhouette,scale="max_min",Title="GBM miRNA Expression")
-#' #drawHeatmap(GeneExp,group,silhouette=silhouette,scale="max_min",
-#' #            color="-RdYlBu",Title="GBM Gene Expression")
+#' drawHeatmap(GeneExp,group,silhouette=silhouette,scale="max_min",
+#'             color="-RdYlBu",Title="GBM Gene Expression")
 #' @export
 #' 
 drawHeatmap<-function(data,group=NULL,silhouette=NULL,scale="no",
@@ -379,11 +379,8 @@ saveFigure<-function(foldername=NULL,filename="saveFig",image_width=10,image_hei
 #' GBM=list(GeneExp=GeneExp,miRNAExp=miRNAExp)
 #' result=ExecuteSNF(GBM, clusterNum=3, K=20, alpha=0.5, t=20)
 #' group=result$group
-#' sigclust=sigclustTest(miRNAExp,group, nsim=500, nrep=1, icovest=3)
-#' 
-#' #sigclust1=sigclustTest(GeneExp,group, nsim=1000, nrep=1, icovest=3)
-#' #sigclust2=sigclustTest(GeneExp,group, nsim=1000, nrep=1, icovest=1)
-#' #sigclust3=sigclustTest(miRNAExp,group, nsim=1000, nrep=1, icovest=1)
+#' sigclust1=sigclustTest(miRNAExp,group, nsim=500, nrep=1, icovest=3)
+#' sigclust2=sigclustTest(miRNAExp,group, nsim=1000, nrep=1, icovest=1)
 #' @export
 sigclustTest<-function(Data,group, nsim=1000, nrep=1, icovest=1)
 {

@@ -97,6 +97,8 @@ FSbyMAD<-function(Data, cut.type="topk", value)
     selectData=Data[index,]
   }
   selectData
+  
+  
 }
 
 

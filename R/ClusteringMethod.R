@@ -53,15 +53,14 @@
 #' @examples
 #' ### The input dataset is a single gene expression matrix.
 #' data(GeneExp)
-#' result=ExecuteCC(clusterNum=3,d=GeneExp,maxK=10,clusterAlg="hc",distance="pearson",title="GBM")
-#' result$group
+#' data(miRNAExp)
+#' result1=ExecuteCC(clusterNum=3,d=GeneExp,maxK=10,clusterAlg="hc",distance="pearson",title="GBM")
+#' result1$group
 #' 
 #' ### The input dataset is multi-genomics data as a list
-#' #data(GeneExp)
-#' #data(miRNAExp)
-#' #GBM=list(GeneExp=GeneExp,miRNAExp=miRNAExp)
-#' #result=ExecuteCC(clusterNum=3,d=GBM,maxK=5,clusterAlg="hc",distance="pearson",title="GBM")
-#' #result$group
+#' GBM=list(GeneExp=GeneExp,miRNAExp=miRNAExp)
+#' result2=ExecuteCC(clusterNum=3,d=GBM,maxK=5,clusterAlg="hc",distance="pearson",title="GBM")
+#' result2$group
 #' 
 #' @references
 #' Monti, S., Tamayo, P., Mesirov, J., Golub, T. (2003) Consensus Clustering: A Resampling-Based Method for Class Discovery and Visualization of Gene Expression Microarray Data. Machine Learning, 52, 91-118.
