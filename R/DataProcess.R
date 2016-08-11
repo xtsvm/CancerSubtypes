@@ -63,23 +63,22 @@ data.checkDistribution<-function(Data)
 data.normalization<-function(Data,type="feature_Median",log2=FALSE)
 {
   if(log2)
+  {
     data=log2(Data+1)
-  else
+  } else{
     data=Data
+    }
   
   if(type=="feature_Median")
   {
     result=sweep(data,1,apply(data,1,function(x) median(x, na.rm = TRUE)))
-  }
-  else if(type=="feature_Mean")
+  } else if(type=="feature_Mean")
   {
     result=sweep(data,1,apply(data,1,function(x) mean(x, na.rm = TRUE)))
-  }
-  else if(type=="feature_zsocre")
+  } else if(type=="feature_zsocre")
   {
     result=t(scale(t(data)))
-  }
-  else if(type=="sample_zsocre")
+  } else if(type=="sample_zsocre")
   {
     result=scale(data)
   }
@@ -123,8 +122,7 @@ data.imputation<-function(Data,fun="median")
       x
     })
     result=t(result)
-  }
-  else if(fun=="mean")
+  } else if(fun=="mean")
   {
     result=apply(Data,1,function(x){
       x<-as.numeric(x)
@@ -132,8 +130,7 @@ data.imputation<-function(Data,fun="median")
       x
     })
     result=t(result)
-  }
-  else if(fun=="microarray")
+  } else if(fun=="microarray")
   {
     result=impute.knn(Data)$data
   }
