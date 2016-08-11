@@ -75,10 +75,10 @@ data.normalization<-function(Data,type="feature_Median",log2=FALSE)
   } else if(type=="feature_Mean")
   {
     result=sweep(data,1,apply(data,1,function(x) mean(x, na.rm = TRUE)))
-  } else if(type=="feature_zsocre")
+  } else if(type=="feature_zscore")
   {
     result=t(scale(t(data)))
-  } else if(type=="sample_zsocre")
+  } else if(type=="sample_zscore")
   {
     result=scale(data)
   }
