@@ -46,7 +46,7 @@ res3=data.imputation(mRNA,fun="microarray")
 #### 2.1.3 Data normalization.
 ```{r}
 result1=data.normalization(mRNA,type="feature_Median",log2=FALSE)
-result2=data.normalization(mRNA,type="feature_zsocre",log2=FALSE)
+result2=data.normalization(mRNA,type="feature_zscore",log2=FALSE)
 ```
 
 ### 2.2 Feature selection
