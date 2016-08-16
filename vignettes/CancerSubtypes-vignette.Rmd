@@ -1,6 +1,7 @@
 ---
 title: "An introduction of CancerSubtypes"
-author: "Taosheng Xu,Thuc Duy Le"
+author: "Taosheng Xu,Thuc Duy Le, Antonio Colaprico,
+Catharina Olsen, Gianluca Bontempi"
 date: '`r Sys.Date()`'
 output: html_document
 vignette: >
@@ -251,6 +252,7 @@ Differential expression analysis is to test the expression difference between ea
 
 ```{r results="hide",message=FALSE,fig.show="hide"}
 library("RTCGA.mRNA")
+#require(TCGAbiolinks)
 rm(list = ls())
 data(BRCA.mRNA)
 mRNA=t(as.matrix(BRCA.mRNA[,-1]))
