@@ -427,6 +427,12 @@ sigclustTest<-function(Data,group, nsim=1000, nrep=1, icovest=1)
 #' For the matrix, the rows represent the genomic features corresponding to the Tumor_Data, and the columns represent the normal samples.
 #' @param group A vector representing the subtype of each tumor sample in the Tumor_Data. The length of group is equal to the column number of Tumor_Data.  
 #' @param topk The top number of different expression features that we want to extract in the return result.
+#' @param sort.by This is a parmeter of "topTable() in limma pacakge". "Character string specifying statistic to rank genes by. Possible values for topTable and toptable are "logFC", "AveExpr", "t", "P", "p", "B" or "none". (Permitted synonyms are "M" for "logFC", "A" or "Amean" for "AveExpr", "T" for "t" and "p" for "P".) Possibilities for topTableF are "F" or "none". Possibilities for topTreat are as for topTable except for "B"."
+#' @param adjust.method This is a parmeter of "topTable() in limma pacakge".  Refer to the "method used to adjust the p-values for multiple testing. Options, in increasing conservatism, include "none", "BH", "BY" and "holm". See p.adjust for the complete list of options. A NULL value will result in the default adjustment method, which is "BH"."                  
+                  
+                  
+                  
+                  
 #' @param RNAseq A bool type representing the input datatype is a RNASeq or not. Default is FALSE for microarray data.
 #' @return 
 #' A list representing the differently expression for each subtype comparing to the Normal group.
@@ -448,7 +454,7 @@ sigclustTest<-function(Data,group, nsim=1000, nrep=1, icovest=1)
 #' Springer New York, 2005. 397-420.
 #' @export
 
-DiffExp.limma<-function(Tumor_Data,Normal_Data,group=NULL,topk=NULL,RNAseq=FALSE)
+DiffExp.limma<-function(Tumor_Data,Normal_Data,group=NULL,topk=NULL,sort.by="p", adjust.method="BH",RNAseq=FALSE)
 { 
   if(is.null(group))
     group=rep(1,ncol(Tumor_Data))
@@ -495,7 +501,7 @@ DiffExp.limma<-function(Tumor_Data,Normal_Data,group=NULL,topk=NULL,RNAseq=FALSE
     {
       topk=nrow(mR)
     }
-    mRresults=topTable(mRfit2, number= topk, sort.by="p", adjust.method="BH")
+    mRresults=topTable(mRfit2, number= topk, sort.by=sort.by, adjust.method=adjust.method)
     ######restore feature name
     mRresults[which(rownames(mRresults)=="1"),1]=name1
     mRresults[which(rownames(mRresults)=="2"),1]=name2
