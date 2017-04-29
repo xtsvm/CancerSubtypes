@@ -1,7 +1,8 @@
 # CancerSubtypes
 Cancer subtypes identification, validation and visualization based on genomic data
 
-This R package "CancerSubtypes" integrates the current common computational biology methods for cancer subtypes identification and provides a standardized framework for cancer subtype analysis based on the genomic datasets.
+This R package "CancerSubtypes" integrates the current common computational biology methods for cancer subtypes identification and provides a standardized framework for cancer subtype analysis based multi-omics data, such as gene expression, miRNA expression, DNA methylation and others.
+
 
 ## Installing CancerSubtypes
 
