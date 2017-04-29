@@ -428,11 +428,7 @@ sigclustTest<-function(Data,group, nsim=1000, nrep=1, icovest=1)
 #' @param group A vector representing the subtype of each tumor sample in the Tumor_Data. The length of group is equal to the column number of Tumor_Data.  
 #' @param topk The top number of different expression features that we want to extract in the return result.
 #' @param sort.by This is a parmeter of "topTable() in limma pacakge". "Character string specifying statistic to rank genes by. Possible values for topTable and toptable are "logFC", "AveExpr", "t", "P", "p", "B" or "none". (Permitted synonyms are "M" for "logFC", "A" or "Amean" for "AveExpr", "T" for "t" and "p" for "P".) Possibilities for topTableF are "F" or "none". Possibilities for topTreat are as for topTable except for "B"."
-#' @param adjust.method This is a parmeter of "topTable() in limma pacakge".  Refer to the "method used to adjust the p-values for multiple testing. Options, in increasing conservatism, include "none", "BH", "BY" and "holm". See p.adjust for the complete list of options. A NULL value will result in the default adjustment method, which is "BH"."                  
-                  
-                  
-                  
-                  
+#' @param adjust.method This is a parmeter of "topTable() in limma pacakge".  Refer to the "method used to adjust the p-values for multiple testing. Options, in increasing conservatism, include "none", "BH", "BY" and "holm". See p.adjust for the complete list of options. A NULL value will result in the default adjustment method, which is "BH"."                              
 #' @param RNAseq A bool type representing the input datatype is a RNASeq or not. Default is FALSE for microarray data.
 #' @return 
 #' A list representing the differently expression for each subtype comparing to the Normal group.
