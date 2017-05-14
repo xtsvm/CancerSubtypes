@@ -12,4 +12,6 @@ License: GPL (>= 2)
 Suggests: BiocGenerics, knitr, RTCGA.mRNA, RTCGA.clinical
 VignetteBuilder: knitr
 biocViews: Clustering, Software, Visualization, GeneExpression
+URL: https://github.com/xtsvm/CancerSubtypes
+BugReports: https://github.com/xtsvm/CancerSubtypes/issues
 RoxygenNote: 6.0.1
