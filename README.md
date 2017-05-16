@@ -1,4 +1,6 @@
 # CancerSubtypes
+[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/xtsvm/CancerSubtypes?branch=master&svg=true)](https://ci.appveyor.com/project/xtsvm/CancerSubtypes)
+
 Cancer subtypes identification, validation and visualization based on multiple genomic data sets.
 
 This R package "CancerSubtypes" integrates the current common computational biology methods for cancer subtypes identification and provides a standardized framework for cancer subtype analysis based multi-omics data, such as gene expression, miRNA expression, DNA methylation and others.
