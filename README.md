@@ -1,13 +1,12 @@
-# CancerSubtypes
+# CancerSubtypes: an R/Bioconductor package for molecular cancer subtype identification, validation, and visualization
+
 [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/xtsvm/CancerSubtypes?branch=master&svg=true)](https://ci.appveyor.com/project/xtsvm/CancerSubtypes)
 [![bioc](http://www.bioconductor.org/shields/downloads/CancerSubtypes.svg)](http://bioconductor.org/packages/stats/bioc/CancerSubtypes.html)
 [![bioc](http://www.bioconductor.org/shields/years-in-bioc/CancerSubtypes.svg)](http://bioconductor.org/packages/CancerSubtypes/)
 [![bioc](http://bioconductor.org/shields/availability/devel/CancerSubtypes.svg)](http://bioconductor.org/packages/CancerSubtypes/)
-
-Cancer subtypes identification, validation and visualization based on multiple genomic data sets.
+[![bioc](http://www.bioconductor.org/shields/build/release/bioc/CancerSubtypes.svg)](http://bioconductor.org/checkResults/release/bioc-LATEST/CancerSubtypes.html)
 
 This R package "CancerSubtypes" integrates the current common computational biology methods for cancer subtypes identification and provides a standardized framework for cancer subtype analysis based multi-omics data, such as gene expression, miRNA expression, DNA methylation and others.
-
 
 ## Installing CancerSubtypes
 
