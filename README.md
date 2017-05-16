@@ -1,5 +1,8 @@
 # CancerSubtypes
 [![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/github/xtsvm/CancerSubtypes?branch=master&svg=true)](https://ci.appveyor.com/project/xtsvm/CancerSubtypes)
+[![bioc](http://www.bioconductor.org/shields/downloads/CancerSubtypes.svg)](http://bioconductor.org/packages/stats/bioc/CancerSubtypes.html)
+[![bioc](http://www.bioconductor.org/shields/years-in-bioc/CancerSubtypes.svg)](http://bioconductor.org/packages/CancerSubtypes/)
+[![bioc](http://bioconductor.org/shields/availability/devel/CancerSubtypes.svg)](http://bioconductor.org/packages/CancerSubtypes/)
 
 Cancer subtypes identification, validation and visualization based on multiple genomic data sets.
 
