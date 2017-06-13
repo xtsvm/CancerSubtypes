@@ -14,15 +14,20 @@ cache:
   - C:\RLibrary
 
 # Adapt as necessary starting from here
+environment:
+  global:
+   WARNINGS_ARE_ERRORS: 0
+   USE_RTOOLS: true
 
 build_script:
-  - travis-tool.sh install_deps
+  - R -e  "0" --args --bootstrap-packrat
 
 test_script:
   - travis-tool.sh run_tests
 
 on_failure:
-  - travis-tool.sh dump_logs
+  - 7z a failure.zip *.Rcheck\*
+  - appveyor PushArtifact failure.zip
 
 artifacts:
   - path: '*.Rcheck\**\*.log'
